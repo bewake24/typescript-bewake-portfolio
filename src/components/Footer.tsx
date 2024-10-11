@@ -1,5 +1,5 @@
-import React from 'react';
-import { Youtube, Instagram, Twitter } from 'lucide-react';
+import { twitterURL, youtubeURL, linkedinURL } from '../assets';
+import { Youtube, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,13 +8,16 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p>&copy; 2024 Vivek Kumar. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="https://youtube.com/vivekkumar" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
+            <a href={youtubeURL} target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
               <Youtube size={24} />
             </a>
-            <a href="https://instagram.com/vivekdev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
+            <a href={linkedinURL} target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
+              <Linkedin size={24} />
+            </a>
+            <a href="https://instagram.com/bewake24" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
               <Instagram size={24} />
             </a>
-            <a href="https://twitter.com/vivekdev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
+            <a href={twitterURL} target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110">
               <Twitter size={24} />
             </a>
           </div>

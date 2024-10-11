@@ -1,65 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  category: string;
-  author: string;
-  tags?: string[];
-  date: string;
-  thumbnail: string;
-  slug: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: '5 Tips for Efficient Full-Stack Development',
-    excerpt: 'Discover some of the best practices and tools to streamline your development process.',
-    category: 'Development',
-    author: 'Vivek Kumar',
-    // tags: [],
-    date: '2024-03-15',
-    thumbnail: 'https://images.unsplash.com/photo-1721332149267-ef9b10eaacd9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D',
-    slug: '5-tips-for-efficient-full-stack-development'
-  },
-  {
-    id: 2,
-    title: 'The Future of Web Development: What to Expect in 2025',
-    excerpt: 'Explore the upcoming trends and technologies that will shape the web development landscape.',
-    category: 'Technology',
-    author: 'Vivek Kumar',
-    tags: ['web development', 'featured'],
-    date: '2024-03-10',
-    thumbnail: 'https://images.unsplash.com/photo-1726954531046-d033ef59ff0f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQxfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D',
-    slug: 'future-of-web-development-2025'
-  },
-  {
-    id: 3,
-    title: 'Mastering React Hooks: A Comprehensive Guide',
-    excerpt: 'Learn how to leverage the power of React Hooks to write more efficient and maintainable code.',
-    category: 'React',
-    author: 'John Doe',
-    // tags: [],
-    date: '2024-03-05',
-    thumbnail: 'https://plus.unsplash.com/premium_photo-1724145883752-a31483e8eed0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYyfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D',
-    slug: 'mastering-react-hooks-comprehensive-guide'
-  },
-  {
-    id: 4,
-    title: 'Mastering React Hooks: A Comprehensive Guide',
-    excerpt: 'Learn how to leverage the power of React Hooks to write more efficient and maintainable code.',
-    category: 'React',
-    author: 'John Doe',
-    date: '2024-03-05',
-    // tags: [],
-    thumbnail: 'https://images.unsplash.com/photo-1721332149267-ef9b10eaacd9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D',
-    slug: 'mastering-react-hooks-comprehensive-guide'
-  },
-  // Add more blog posts as needed
-];
+import blogPosts from '../assets/data/blogs';
 
 const BlogPage: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
