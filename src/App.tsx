@@ -10,10 +10,8 @@ import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-const avatar01 = 'assets/images/avatar01.webp'
 
 function App() {
-  // const avatar01 = 'assets/images/avatar01.webp'
   return (
     <Router>
       <div className="min-h-screen bg-[#1e1e3a] text-white">
@@ -23,7 +21,6 @@ function App() {
             <Route path="/" element={
               <>
                 <Intro />
-                <img src={avatar01} />
                 <About />
                 <Skills />
                 <Projects />

@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
-import { Download, Play, X } from 'lucide-react';
+import { useState } from "react";
+import { Download, Play, X } from "lucide-react";
+import avatar01 from "../assets/images/avatar01.webp";
 
 const Intro = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <section className="py-20 text-center relative">
+    <section className="pt-20 text-center relative">
       <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">
         Hi, I'm <span className="gradient-text">Vivek Kumar!</span> 👋
       </h1>
-      <h2 className="text-2xl md:text-3xl mb-8 animate-fade-in-up">Full Stack Developer & Content Creator</h2>
+      <h2 className="text-2xl md:text-3xl mb-8 animate-fade-in-up">
+        Full Stack Developer & Content Creator
+      </h2>
       <p className="text-lg mb-8 max-w-2xl mx-auto animate-fade-in">
-        Fullstack Web developer from India specializing in creating efficient, responsive, scalable, and secure web solutions for businesses
+        Fullstack Web developer from India specializing in creating efficient,
+        responsive, scalable, and secure web solutions for businesses
       </p>
       <div className="flex justify-center space-x-4">
         <a
@@ -28,6 +32,17 @@ const Intro = () => {
           <Play size={20} />
           <span>Play Intro</span>
         </button>
+      </div>
+
+      {/* Image with Gradient Border */}
+      <div className="flex justify-center  mt-8 md:mt-16">
+        <div className="relative p-1 md:p-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600">
+          <img
+            src={avatar01}
+            alt="My ai avatar working on a laptop"
+            className="rounded-xl w-full max-w-[900px] h-auto object-cover aspect-[16/7]"
+          />
+        </div>
       </div>
 
       {showVideo && (
@@ -56,5 +71,4 @@ const Intro = () => {
 };
 
 export default Intro;
-
 

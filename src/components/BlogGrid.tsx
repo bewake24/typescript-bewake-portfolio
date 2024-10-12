@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import blogPosts from '../assets/data/blogs';
 
 interface BlogGridProps {
     blogPosts: {
