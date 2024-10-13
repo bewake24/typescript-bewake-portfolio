@@ -10,6 +10,7 @@ import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatIDo from './components/WhatIDo/WhatIDo';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <Route path="/" element={
               <>
                 <Intro />
-                <About />
+                {/* <About /> */}
+                <WhatIDo />
                 <Skills />
                 <Projects />
                 <Testimonials />
