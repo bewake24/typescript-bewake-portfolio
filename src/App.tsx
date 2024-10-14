@@ -11,6 +11,7 @@ import BlogPostPage from './components/BlogPostPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatIDo from './components/WhatIDo/WhatIDo';
+import Credits from './components/Credits';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             } />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/credits" element={<Credits />} />
           </Routes>
         </main>
         <Footer />
