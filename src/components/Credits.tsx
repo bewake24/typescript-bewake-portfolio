@@ -5,13 +5,13 @@ const Credits = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1e1e3a] text-white p-8">
+    <div className="min-h-screen bg-[#1e1e3a] text-white p-4 md:p-8 ">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl text-center font-bold my-16 gradient-text">
+        <h2 className="text-4xl md:text-6xl md:text-center font-bold my-8 md:my-16 gradient-text">
           Credits
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 hidden md:block">
             <nav>
               <ul className="space-y-2">
                 {sections.map((section) => (
