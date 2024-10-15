@@ -76,11 +76,9 @@ const Credits = () => {
               resources might be missing. I'm Working hard to complete this site
               as soon as possible. If you have any objection please{" "}
               <a href="mailto:vivek@valeff.com" className="text-slate-200">
-                {" "}
                 reach out to me
               </a>
             </p>
-            {/* Add more sections as needed */}
           </div>
         </div>
       </div>
