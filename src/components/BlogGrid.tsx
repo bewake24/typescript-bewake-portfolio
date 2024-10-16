@@ -16,7 +16,6 @@ interface BlogGridProps {
   }
 
 const BlogGrid: React.FC<BlogGridProps> = ({ blogPosts }) => {
-    // const filteredPosts = blogPosts.filter(post => post.tags?.includes('featured'))
 
   return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
