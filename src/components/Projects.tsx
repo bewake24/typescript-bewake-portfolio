@@ -16,12 +16,12 @@ const Projects = () => {
             <img
               src={project.thumbnail}
               alt={"post.title"}
-              className="w-full h-48 object-cover"
+              className="w-full object-cover"
             />
             <div key={index} className="p-6">
               <h3 className="text-xl flex gap-2 font-semibold mb-2">
                 {project.title}{" "}
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <a href={project.url} className="text-purple-400" target="_blank" rel="noopener noreferrer">
                   <FaArrowUpRightFromSquare size={16} />
                 </a>
               </h3>
