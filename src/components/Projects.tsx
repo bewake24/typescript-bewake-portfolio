@@ -15,7 +15,7 @@ const Projects = () => {
           >
             <img
               src={project.thumbnail}
-              alt={"post.title"}
+              alt={"Thumbnail of project"}
               className="w-full object-cover"
             />
             <div key={index} className="p-6">

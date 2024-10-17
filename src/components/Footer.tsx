@@ -1,49 +1,41 @@
-import { Link } from "react-router-dom";
-import { twitterURL, youtubeURL, linkedinURL } from "../assets";
-import { Youtube, Instagram, Twitter, Linkedin } from "lucide-react";
+import React, { useState } from 'react';
+import {Link }from 'react-router-dom';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [subscriptionStatus, setSubscriptionStatus] = useState('');
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the email to a server for newsletter subscription
+    console.log('Subscribed email:', email);
+    setSubscriptionStatus('Thank you for subscribing!');
+    setEmail('');
+  };
 
   return (
     <footer className="bg-purple-900 bg-opacity-20 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <Link to="/credits" className=" text-md text-purple-400 ease-in-out transform hover:scale-110" >Credits</Link>
-          <p>&copy; {year} Vivek Kumar. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a
-              href={youtubeURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110"
-            >
-              <Youtube size={24} />
-            </a>
-            <a
-              href={linkedinURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://instagram.com/bewake24"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110"
-            >
-              <Instagram size={24} />
-            </a>
-            <a
-              href={twitterURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-400 transition-all duration-300 ease-in-out transform hover:scale-110"
-            >
-              <Twitter size={24} />
-            </a>
+          <p>&copy; 2024 Vivek Kumar. All rights reserved.</p>
+          <div className="mt-4 md:mt-0">
+            <form onSubmit={handleSubscribe} className="flex space-x-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="px-3 py-2 bg-purple-800 bg-opacity-50 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <button type="submit" className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
+                Subscribe
+              </button>
+            </form>
+            {subscriptionStatus && (
+              <p className="mt-2 text-sm text-green-400">{subscriptionStatus}</p>
+            )}
           </div>
         </div>
       </div>
@@ -52,3 +44,8 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+// {/* <Link to="/credits" className=" text-md text-purple-400 ease-in-out transform hover:scale-110" >Credits</Link> */}
