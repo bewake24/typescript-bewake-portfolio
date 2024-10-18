@@ -4,13 +4,16 @@ import {Link }from 'react-router-dom';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [subscriptionStatus, setSubscriptionStatus] = useState('');
+  const [visible, setVisible] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+    setVisible(true); 
     // Here you would typically send the email to a server for newsletter subscription
     console.log('Subscribed email:', email);
     setSubscriptionStatus('Thank you for subscribing!');
     setEmail('');
+    setTimeout(() => setVisible(false), 3000);
   };
 
   return (
@@ -34,7 +37,9 @@ const Footer = () => {
               </button>
             </form>
             {subscriptionStatus && (
-              <p className="mt-2 text-sm text-green-400">{subscriptionStatus}</p>
+              <p className={`transition-opacity absolute z-50 duration-1000 ${
+                visible ? 'opacity-100' : 'opacity-0'
+              } text-green-400`}>{subscriptionStatus}</p>
             )}
           </div>
         </div>
@@ -44,8 +49,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-// {/* <Link to="/credits" className=" text-md text-purple-400 ease-in-out transform hover:scale-110" >Credits</Link> */}

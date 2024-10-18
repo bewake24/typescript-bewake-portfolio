@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Twitter, Linkedin } from 'lucide-react';
+import React, { useState } from "react";
+import { Mail, Twitter, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [formStatus, setFormStatus] = useState('');
-  const [visible, setVisible] = useState(false); // To control message visibility
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [formStatus, setFormStatus] = useState("");
+  const [visible, setVisible] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { email, phone, message });
 
-    setFormStatus('Message sent successfully!');
-    setVisible(true); // Show the confirmation message
-
-    setEmail('');
-    setPhone('');
-    setMessage('');
-
-    // Hide the message after 3 seconds with smooth animation
+    setFormStatus("Message sent successfully!");
+    setVisible(true); 
+    setEmail("");
+    setPhone("");
+    setMessage("");
     setTimeout(() => setVisible(false), 3000);
   };
 
@@ -30,7 +26,8 @@ const Contact = () => {
         {/* Left Section - Contact Links */}
         <div className="md:w-1/2">
           <p className="mb-6">
-            If you'd like to work with me or just want to say hi, feel free to reach out!
+            If you'd like to work with me or just want to say hi, feel free to
+            reach out!
           </p>
           <div className="space-y-4">
             <a
@@ -66,7 +63,9 @@ const Contact = () => {
           <div className="p-8 bg-purple-800 bg-opacity-10 rounded-xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-4 relative">
               <div>
-                <label htmlFor="email" className="block mb-1">Email (required)</label>
+                <label htmlFor="email" className="block mb-1">
+                  Email (required)
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -77,7 +76,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block mb-1">Phone Number (optional)</label>
+                <label htmlFor="phone" className="block mb-1">
+                  Phone Number (optional)
+                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -87,7 +88,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block mb-1">Message (required)</label>
+                <label htmlFor="message" className="block mb-1">
+                  Message (required)
+                </label>
                 <textarea
                   id="message"
                   value={message}
@@ -107,7 +110,7 @@ const Contact = () => {
                 {formStatus && (
                   <p
                     className={`transition-opacity duration-1000 ${
-                      visible ? 'opacity-100' : 'opacity-0'
+                      visible ? "opacity-100" : "opacity-0"
                     } text-green-400`}
                   >
                     {formStatus}
