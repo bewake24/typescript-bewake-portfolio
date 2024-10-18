@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { Download, Play, X } from "lucide-react";
+import { linkedinURL } from "../assets/index";
+import { RiDownload2Fill } from "react-icons/ri";
+import { FaLinkedinIn } from "react-icons/fa";
 import avatar01 from "../assets/images/avatar01.webp";
 
 const Intro = () => {
-  const [showVideo, setShowVideo] = useState(false);
-
   return (
     <section className="pt-20 text-center relative">
       <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">
@@ -22,19 +21,20 @@ const Intro = () => {
           href="http://www.google.com"
           className="gradient-bg px-6 py-3 rounded-full flex items-center space-x-2 hover:opacity-90 transition-all duration-300 ease-in-out transform hover:scale-105"
         >
-          <Download size={20} />
+          <RiDownload2Fill size={20} />
           <span>Download CV</span>
         </a>
-        <button
-          onClick={() => setShowVideo(true)}
+        <a
+          href={linkedinURL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-white text-[#1e1e3a] px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-gray-200 transition-all duration-300 ease-in-out transform hover:scale-105"
         >
-          <Play size={20} />
-          <span>Play Intro</span>
-        </button>
+          <FaLinkedinIn size={20} />
+          <span>Hire Me</span>
+        </a>
       </div>
 
-      {/* Image with Gradient Border */}
       <div className="flex justify-center  mt-8 md:mt-16">
         <div className="relative p-1 md:p-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600">
           <img
@@ -44,31 +44,8 @@ const Intro = () => {
           />
         </div>
       </div>
-
-      {showVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 animate-fade-in">
-          <div className="relative w-full max-w-4xl">
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
-            >
-              <X size={24} />
-            </button>
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                src="https://www.youtube.com/embed/TciH98bZIdg?si=KEobmMUZcYgVc0Dg"
-                title="Vivek Kumar Intro"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
 
 export default Intro;
-
