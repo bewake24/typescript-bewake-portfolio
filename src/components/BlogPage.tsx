@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import blogPosts from '../assets/data/blogs';
+import blogs from '../assets/data/Blogs.tsx';
 
 const BlogPage: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [authorFilter, setAuthorFilter] = useState('');
   const [dateFilter, setDateFilter] = useState('');
 
-  const filteredPosts = blogPosts.filter(post => 
+  const filteredPosts = blogs.filter(post => 
     (!categoryFilter || post.category === categoryFilter) &&
     (!authorFilter || post.author === authorFilter) &&
     (!dateFilter || post.date.includes(dateFilter))
   );
 
-  const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-  const authors = Array.from(new Set(blogPosts.map(post => post.author)));
+  const categories = Array.from(new Set(blogs.map(post => post.category)));
+  const authors = Array.from(new Set(blogs.map(post => post.author)));
 
   return (
     <div className="py-20">

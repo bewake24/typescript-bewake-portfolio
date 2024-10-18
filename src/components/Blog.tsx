@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import BlogGrid from './BlogGrid';
-import blogPosts from '../assets/data/blogs';
+import blogs from '../assets/data/Blogs.tsx';
 
 const Blog = () => {
-  const featuredPosts = blogPosts.filter(post => post.tags?.includes('featured'));
+  const featuredPosts = blogs.filter(post => post.tags?.includes('featured'));
   return (
     <section id="blog" className="py-20">
       <h2 className="text-3xl font-bold mb-8 gradient-text">Blog</h2>
