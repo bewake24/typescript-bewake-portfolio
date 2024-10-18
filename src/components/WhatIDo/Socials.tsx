@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { Youtube, Github, Twitter, Linkedin } from "lucide-react";
+import { LuLinkedin } from "react-icons/lu";
+import { FaXTwitter } from "react-icons/fa6";
+import { LuGithub } from "react-icons/lu";
+import { FiYoutube } from "react-icons/fi";
+
 import {
   twitterURL,
   githubURL,
@@ -16,19 +20,19 @@ interface SocialProps {
 const socialIcons: SocialProps[] = [
   {
     url: youtubeURL,
-    icon: <Youtube className="w-6 h-6" />,
+    icon: <FiYoutube className="w-6 h-6" />,
   },
   {
     url: linkedinURL,
-    icon: <Linkedin className="w-6 h-6" />,
+    icon: <LuLinkedin className="w-6 h-6" />,
   },
   {
     url: githubURL,
-    icon: <Github className="w-6 h-6" />,
+    icon: <LuGithub className="w-6 h-6" />,
   },
   {
     url: twitterURL,
-    icon: <Twitter className="w-6 h-6" />,
+    icon: <FaXTwitter className="w-6 h-6" />,
   },
 ];
 

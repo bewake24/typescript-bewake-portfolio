@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Mail, Twitter, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { LuLinkedin } from "react-icons/lu";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +36,7 @@ const Contact = () => {
               href="mailto:vivek@valeff.com"
               className="flex items-center space-x-2 text-purple-400 hover:underline"
             >
-              <Mail size={20} />
+              <MdOutlineMailOutline size={20} />
               <span>vivek@valeff.com</span>
             </a>
             <a
@@ -43,7 +45,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-purple-400 hover:underline"
             >
-              <Twitter size={20} />
+              <FaXTwitter size={20} />
               <span>@bewake24</span>
             </a>
             <a
@@ -52,7 +54,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-purple-400 hover:underline"
             >
-              <Linkedin size={20} />
+              <LuLinkedin size={20} />
               <span>@bewake24</span>
             </a>
           </div>
