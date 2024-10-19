@@ -27,6 +27,7 @@ const Services: React.FC = () => {
           <h3 className="text-xl font-semibold mt-4 mb-2">{service.title}</h3>
           <p className="text-sm text-gray-300">{service.description}</p>
         </motion.div>
+
       ))}
     </div>
   );

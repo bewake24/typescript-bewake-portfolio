@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { homeURL } from "../assets/index";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -22,19 +23,16 @@ const Header = () => {
         <Link to="/" className="hover:text-purple-400 transition-colors">
           Home
         </Link>
-        <a href="#about" className="hover:text-purple-400 transition-colors">
-          About
-        </a>
-        <a href="#skills" className="hover:text-purple-400 transition-colors">
+        <a href={`${homeURL}/#skills`}  className="hover:text-purple-400 transition-colors">
           Skills
         </a>
-        <a href="#projects" className="hover:text-purple-400 transition-colors">
+        <a href={`${homeURL}/#projects`} className="hover:text-purple-400 transition-colors">
           Projects
         </a>
         <Link to="/blog" className="hover:text-purple-400 transition-colors">
           Blog
         </Link>
-        <a href="#contact" className="hover:text-purple-400 transition-colors">
+        <a href={`${homeURL}/#contact`}  className="hover:text-purple-400 transition-colors">
           Contact
         </a>
       </nav>
@@ -64,21 +62,14 @@ const Header = () => {
                 Home
               </Link>
               <a
-                href="#about"
-                className="hover:text-purple-400 transition-colors py-2"
-                onClick={handleLinkClick}
-              >
-                About
-              </a>
-              <a
-                href="#skills"
+                href={`${homeURL}/#skills`}  
                 className="hover:text-purple-400 transition-colors py-2"
                 onClick={handleLinkClick}
               >
                 Skills
               </a>
               <a
-                href="#projects"
+                href={`${homeURL}/#projects`} 
                 className="hover:text-purple-400 transition-colors py-2"
                 onClick={handleLinkClick}
               >
@@ -92,7 +83,7 @@ const Header = () => {
                 Blog
               </Link>
               <a
-                href="#contact"
+                href={`${homeURL}/#contact`}
                 className="hover:text-purple-400 transition-colors py-2"
                 onClick={handleLinkClick}
               >
