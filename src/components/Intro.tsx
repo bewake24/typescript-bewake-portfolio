@@ -2,6 +2,7 @@ import { linkedinURL } from "../assets/index";
 import { RiDownload2Fill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 import avatar01 from "../assets/images/avatar01.webp";
+import resume from "../assets/VivekFullStackDev.pdf";
 
 const Intro = () => {
   return (
@@ -18,7 +19,8 @@ const Intro = () => {
       </p>
       <div className="flex justify-center space-x-4">
         <a
-          href="http://www.google.com"
+          href={resume}
+          download="Vivek Kumar: Full Stack Developer"
           className="gradient-bg px-6 py-3 rounded-full flex items-center space-x-2 hover:opacity-90 transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           <RiDownload2Fill size={20} />
