@@ -2,22 +2,37 @@ import React, { useState } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { LuLinkedin } from "react-icons/lu";
+import { contactForm } from "../assets/index";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [formStatus, setFormStatus] = useState("");
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setFormStatus("Message sent successfully!");
-    setVisible(true); 
-    setEmail("");
-    setPhone("");
-    setMessage("");
+    const formData = new FormData();
+    formData.append(contactForm.email, email);
+    formData.append(contactForm.phone, phone);
+    formData.append(contactForm.message, message);
+
+    try {
+      await fetch(contactForm.url, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors', // Required to bypass CORS errors
+      });
+      setFormStatus("Message sent successfully!");
+    } catch (error) {
+      setFormStatus("Error Sending message, please try again later");
+    }
+
+    setEmail('');
+    setPhone('');
+    setMessage('');
     setTimeout(() => setVisible(false), 3000);
   };
 
@@ -111,7 +126,7 @@ const Contact = () => {
                 </button>
                 {formStatus && (
                   <p
-                    className={`transition-opacity duration-1000 ${
+                    className={`transition-opacity z-50 duration-1000 ${
                       visible ? "opacity-100" : "opacity-0"
                     } text-green-400`}
                   >
